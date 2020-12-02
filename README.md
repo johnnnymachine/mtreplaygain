@@ -1,2 +1,2 @@
 # mtreplaygain
-multithreaded replaygain - A simple multithreaded wrapper for replaygain
+multithreaded replaygain - a simple multithreaded wrapper for replaygain
