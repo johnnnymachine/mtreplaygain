@@ -4,6 +4,7 @@ Path::Path()
 {
 	sPath = ".";
 	bRecursive = false;
+	bExtensionFilter = false;
 }
 
 string Path::Load()
@@ -72,8 +73,18 @@ void Path::LoadFiles()
 	{
 		for(auto &de : recursive_directory_iterator(sPath))
 		{
-			if(is_regular_file(de.path()) && sExtensions.count(de.path().extension().generic_string()))
-				vFiles.push_back(de.path());
+			if(bExtensionFilter)
+			{
+				if(is_regular_file(de.path()) && sExtensions.count(de.path().extension().generic_string()))
+					vFiles.push_back(de.path());
+			}
+			else
+			{
+				if(is_regular_file(de.path()))
+				{
+					vFiles.push_back(de.path());
+				}
+			}
 		}
 	}
 	else

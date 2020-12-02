@@ -26,6 +26,7 @@ int main(int argc, char *argv[])
 	if(ThreadCount == 0) ThreadCount = 12;
 
 	Path *pPath = new Path;
+	pPath->bExtensionFilter = true;
 	pPath->sExtensions = set<string> { ".mp3", ".ogg" };
 	string sError;
 	cout << "Loading input file list..." << endl;

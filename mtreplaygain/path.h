@@ -19,6 +19,7 @@ public:
 	vector<path> vDirs;
 	vector<path> vFiles;
 	bool bRecursive;
+	bool bExtensionFilter;
 
 	Path();
 
